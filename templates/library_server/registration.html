@@ -1,0 +1,44 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+{% include 'library_server/head.html' %}
+<style>
+    input[type="text"], [type="email"], [type="password"] {
+        width: 300px;
+        height: 30px;
+    }
+
+    input[type="submit"] {
+        width: 100px;
+        font-size: 18px;
+    }
+
+    label {
+        width: 300px;
+        font-family: AR CENA;
+        font-size: 20px;
+    }
+</style>
+<body>
+{% include 'library_server/navigation_bar.html' %}
+{% block content %}
+    <h2>Registration</h2>
+    <form action="/registration/" method="post">{% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Register"/>
+    </form>
+{% endblock %}
+<hr>
+<!-- Footer -->
+<footer>
+    <div class="row">
+        <div class="col-lg-12">
+            <p>Copyright &copy; Your Website 2014</p>
+        </div>
+    </div>
+</footer>
+</div>
+<script src="{% static 'library_server/js/jquery.js' %} "></script>
+<script src="{% static 'library_server/js/bootstrap.min.js' %} "></script>
+</body>
+</html>

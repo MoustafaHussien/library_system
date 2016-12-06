@@ -1,0 +1,40 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+{% include 'library_server/head.html' %}
+<body>
+
+{% include 'library_server/navigation_bar.html' %}
+<!-- Page Content -->
+<div class="container">
+    <!-- Page Header -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Page Heading
+                <small>Secondary Text</small>
+            </h1>
+        </div>
+    </div>
+    <!-- Projects Row -->
+    {% if if_exist %}
+        <h3>{{ user.get_username }} has already borrowed that book before</h3>
+    {% endif %}
+    {% if not if_exist %}
+        <h3>book borrowing successful</h3>
+    {% endif %}
+    <hr>
+</div>
+<hr>
+<!-- Footer -->
+<footer>
+    <div class="row">
+        <div class="col-lg-12">
+            <p>Copyright &copy; Your Website 2014</p>
+        </div>
+    </div>
+</footer>
+</div>
+<script src="{% static 'library_server/js/jquery.js' %} "></script>
+<script src="{% static 'library_server/js/bootstrap.min.js' %} "></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+{% include 'library_server/head.html' %}
+<body>
+
+{% include 'library_server/navigation_bar.html' %}
+<!-- Page Content -->
+<div class="container">
+    <!-- Page Header -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Page Heading
+                <small>Secondary Text</small>
+            </h1>
+        </div>
+    </div>
+    <!-- Projects Row -->
+    <div class="row">
+        {% for book in book_list %}
+            <div class="col-md-4 portfolio-item">
+                <img class="img-responsive" src='{{ book.img }}' alt=""
+                     style="height: 350px; width: 225px; overflow: hidden;">
+                <h3>Title : {{ book.title }}</h3>
+                <h3>Author : {{ book.author }}</h3>
+                <h3>Publisher : {{ book.publisher }}</h3>
+                <h3>ISBN : {{ book.isbn }}</h3>
+                <h3>Publish date : {{ book.pub_date }}</h3>
+                <h3>Available Copies : {{ book.available_copies }}</h3>
+            </div>
+            <a type="button" class="btn btn-primary" href="{% url 'borrow_page' book.id %}">Borrow</a>
+        {% endfor %}
+    </div>
+    <hr>
+</div>
+<hr>
+<!-- Footer -->
+<footer>
+    <div class="row">
+        <div class="col-lg-12">
+            <p>Copyright &copy; Your Website 2014</p>
+        </div>
+    </div>
+</footer>
+</div>
+<script src="{% static 'library_server/js/jquery.js' %} "></script>
+<script src="{% static 'library_server/js/bootstrap.min.js' %} "></script>
+</body>
+</html>

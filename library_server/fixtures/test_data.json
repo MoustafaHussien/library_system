@@ -1,0 +1,222 @@
+[
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$30000$meLujZVfep9d$HYrskKOwV9XgSlyLKL0fQ2rE3CEMNGNQ2NpVQUg8iNs=",
+      "last_login": "2016-12-05T21:01:27Z",
+      "is_superuser": false,
+      "username": "MoustafaHussein",
+      "first_name": "",
+      "last_name": "",
+      "email": "moustafa.elmasry2013@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2016-12-04T23:09:26Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$30000$a2PcNYYsK9pf$xDTGiaOYlsZlS3Yn2hHzHz9YlX8+jVQUDJu+Lu4VLgQ=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "jacob",
+      "first_name": "",
+      "last_name": "",
+      "email": "jacob@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2016-12-06T13:31:59Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$30000$wMP8CeTC4EgO$F6J/hIopurMlIAuA6IdkoHMEpSoQ7zhNIEpSg9MhLGA=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "Ali",
+      "first_name": "",
+      "last_name": "",
+      "email": "Ali@yahoo.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2016-12-06T13:31:59Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$30000$PbrhzW3JwY2z$yH11AvRtGG74FqPz83sRNm6l1HupxLGMrvdl3X3iNT4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "Michael",
+      "first_name": "",
+      "last_name": "",
+      "email": "Michael@outlook.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2016-12-06T13:31:59Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "library_server.book",
+    "pk": 1,
+    "fields": {
+      "pub_date": "2016-11-18",
+      "title": "Fantastic Beasts and Where to Find Them: The Original Screenplay",
+      "author": "J.K. Rowling",
+      "publisher": "Arthur A. Levine Books",
+      "isbn": "978-1338109061",
+      "img": "https://images-na.ssl-images-amazon.com/images/I/61kS08bR-EL._SX311_BO1 204 203 200_.jpg",
+      "available_copies": 10,
+      "requestFreq": 0
+    }
+  },
+  {
+    "model": "library_server.book",
+    "pk": 2,
+    "fields": {
+      "pub_date": "2016-11-01",
+      "title": "Diary of a Wimpy Kid # 11: Double Down",
+      "author": "Jeff Kinney",
+      "publisher": "Harry N. Abrams",
+      "isbn": "978-1419723445",
+      "img": "https://images-na.ssl-images-amazon.com/images/I/518byyOLMcL._SX344_BO1 204 203 200_.jpg",
+      "available_copies": 10,
+      "requestFreq": 0
+    }
+  },
+  {
+    "model": "library_server.book",
+    "pk": 3,
+    "fields": {
+      "pub_date": "2016-10-18",
+      "title": "The Magnolia Story",
+      "author": "Chip Gaines",
+      "publisher": "Thomas Nelson",
+      "isbn": "978-0718079185",
+      "img": "https://images-na.ssl-images-amazon.com/images/I/51WIWazu2rL._SX331_BO1 204 203 200_.jpg",
+      "available_copies": 10,
+      "requestFreq": 0
+    }
+  },
+  {
+    "model": "library_server.book",
+    "pk": 4,
+    "fields": {
+      "pub_date": "2016-09-03",
+      "title": "Killing the Rising Sun: How America Vanquished World War II Japan",
+      "author": "Bill O'Reilly",
+      "publisher": "Henry Holt and Co",
+      "isbn": "978-1627790628",
+      "img": "https://images-na.ssl-images-amazon.com/images/I/51x-38avp4L._SX328_BO1 204 203 200_.jpg",
+      "available_copies": 10,
+      "requestFreq": 0
+    }
+  },
+  {
+    "model": "library_server.book",
+    "pk": 5,
+    "fields": {
+      "pub_date": "2016-11-16",
+      "title": "Take Heart  My Child: A Mother's Dream",
+      "author": "Ainsley Earhardt",
+      "publisher": "Aladdin",
+      "isbn": "978-1481466226",
+      "img": "https://images-na.ssl-images-amazon.com/images/I/515MrbUcuwL._SX409_BO1 204 203 200_.jpg",
+      "available_copies": 10,
+      "requestFreq": 0
+    }
+  },
+  {
+    "model": "library_server.book",
+    "pk": 6,
+    "fields": {
+      "pub_date": "2016-04-11",
+      "title": "Hamilton: The Revolution",
+      "author": "Lin-Manuel Miranda",
+      "publisher": "Grand Central Publishing",
+      "isbn": "978-1455539741",
+      "img": "https://images-na.ssl-images-amazon.com/images/I/51PK6V0aiOL._SX396_BO1 204 203 200_.jpg",
+      "available_copies": 10,
+      "requestFreq": 0
+    }
+  },
+  {
+    "model": "library_server.book",
+    "pk": 7,
+    "fields": {
+      "pub_date": "2016-11-15",
+      "title": "Our Revolution: A Future to Believe In",
+      "author": "Bernie Sanders",
+      "publisher": "Thomas Dunne Books",
+      "isbn": "978-1250132925",
+      "img": "https://images-na.ssl-images-amazon.com/images/I/51gRt0H1MXL._SX328_BO1 204 203 200_.jpg",
+      "available_copies": 10,
+      "requestFreq": 0
+    }
+  },
+  {
+    "model": "library_server.book",
+    "pk": 8,
+    "fields": {
+      "pub_date": "2016-10-25",
+      "title": "The Whistler",
+      "author": "John Grisham",
+      "publisher": "Doubleday",
+      "isbn": "978-0385541190",
+      "img": "https://images-na.ssl-images-amazon.com/images/I/51NEkcjDPuL._SX327_BO1 204 203 200_.jpg",
+      "available_copies": 10,
+      "requestFreq": 0
+    }
+  },
+  {
+    "model": "library_server.borrowedbook",
+    "pk": 3,
+    "fields": {
+      "user": 2,
+      "book": 1,
+      "pub_date": "2016-12-05"
+    }
+  },
+  {
+    "model": "library_server.borrowedbook",
+    "pk": 4,
+    "fields": {
+      "user": 2,
+      "book": 2,
+      "pub_date": "2016-12-05"
+    }
+  },
+  {
+    "model": "library_server.borrowedbook",
+    "pk": 5,
+    "fields": {
+      "user": 2,
+      "book": 8,
+      "pub_date": "2016-12-05"
+    }
+  },
+  {
+    "model": "library_server.borrowedbook",
+    "pk": 6,
+    "fields": {
+      "user": 3,
+      "book": 5,
+      "pub_date": "2016-12-05"
+    }
+  }
+]
