@@ -25,8 +25,10 @@ urlpatterns = [
     url(r'^accounts/login/$', django.contrib.auth.views.login, name='login'),
     url(r'^accounts/logout/$', django.contrib.auth.views.logout, name='logout'),
     url(r'^borrow/([0-9]+)/$', views.borrow, name='borrow_page'),
+    url(r'^return/([0-9]+)/$', views.return_, name='return_page'),
     url(r'^accounts/profile/$', views.profile, name='profile'),
     url(r'^registration/$', views.registration, name='registration'),
     url(r'^books/([0-9]+)/$', views.get_book, name='book_page'),
+    url(r'^search/?$', views.search_, name='book_page'),
     url(r'^', views.main_page, name='empty_url'),
 ]

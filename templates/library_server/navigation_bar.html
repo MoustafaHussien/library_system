@@ -29,6 +29,15 @@
                 <li>
                     <a href="{% url 'registration' %}">Signup</a>
                 </li>
+                <li>
+                    <a>
+                        <form type="get" action="/search/">
+                            <input style=" background-color : rgba(68,68,68,0.74);" id="search_box" type="text" name="search_box"
+                                   placeholder="Search...">
+                            <button style="background-color: #2e6da4" id="search_submit" type="submit">Submit</button>
+                        </form>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->

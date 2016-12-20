@@ -14,7 +14,6 @@ class Book(models.Model):
     isbn = models.CharField(max_length=200, default="")
     img = models.CharField(max_length=1000, default="http://placehold.it/700x400")
     available_copies = models.IntegerField(default=0)
-    requestFreq = models.IntegerField(default=0)
 
     def __str__(self):  # __unicode__ on Python 2
         return self.title + ' ' + self.author
@@ -26,7 +25,19 @@ class BorrowedBook(models.Model):
 
     user = models.ForeignKey(User)
     book = models.ForeignKey(Book)
-    pub_date = models.DateField(default=datetime.now)
+    borrow_date = models.DateField(default=datetime.now)
+
+    def __str__(self):  # __unicode__ on Python 2
+        return str(self.user.id) + ' ' + str(self.book)
+
+
+class BookRequest(models.Model):
+    class Meta:
+        unique_together = (('user', 'book'),)
+
+    user = models.ForeignKey(User)
+    book = models.ForeignKey(Book)
+    request_date = models.DateField(default=datetime.now)
 
     def __str__(self):  # __unicode__ on Python 2
         return str(self.user.id) + ' ' + str(self.book)

@@ -1,28 +1,10 @@
 [
   {
     "model": "auth.user",
-    "pk": 1,
-    "fields": {
-      "password": "pbkdf2_sha256$30000$iOthIe3rwTok$pQKlI8DS8Gq2zN+qj8NJ98oZNef+X9xby6RdT2/gcpo=",
-      "last_login": null,
-      "is_superuser": false,
-      "username": "asdsadasdasd",
-      "first_name": "adasd",
-      "last_name": "asdasd",
-      "email": "adasdal@ssgsd.com",
-      "is_staff": false,
-      "is_active": true,
-      "date_joined": "2016-12-04T22:09:49Z",
-      "groups": [],
-      "user_permissions": []
-    }
-  },
-  {
-    "model": "auth.user",
     "pk": 2,
     "fields": {
       "password": "pbkdf2_sha256$30000$meLujZVfep9d$HYrskKOwV9XgSlyLKL0fQ2rE3CEMNGNQ2NpVQUg8iNs=",
-      "last_login": "2016-12-17T15:52:05Z",
+      "last_login": "2016-12-05T21:01:27Z",
       "is_superuser": false,
       "username": "MoustafaHussein",
       "first_name": "",
@@ -90,42 +72,6 @@
     }
   },
   {
-    "model": "auth.user",
-    "pk": 7,
-    "fields": {
-      "password": "pbkdf2_sha256$30000$surNXwQCGhcx$bqts2n5bnMyEqG0pEdgPSk9Pa3f1PplJnKHrTK/jQlI=",
-      "last_login": "2016-12-07T12:53:37Z",
-      "is_superuser": true,
-      "username": "moustah",
-      "first_name": "",
-      "last_name": "",
-      "email": "moustafa.elmasry2013@gmail.com",
-      "is_staff": true,
-      "is_active": true,
-      "date_joined": "2016-12-06T20:33:23Z",
-      "groups": [],
-      "user_permissions": []
-    }
-  },
-  {
-    "model": "auth.user",
-    "pk": 8,
-    "fields": {
-      "password": "pbkdf2_sha256$30000$2KMn9T7wGu3a$QKG7867sLpUbbirJKZ89/q/gvCzW/Ec0DJ2lqaZa4Jo=",
-      "last_login": "2016-12-17T19:38:27Z",
-      "is_superuser": false,
-      "username": "ahmed",
-      "first_name": "",
-      "last_name": "",
-      "email": "ahmed@yahoo.com",
-      "is_staff": false,
-      "is_active": true,
-      "date_joined": "2016-12-17T19:37:56Z",
-      "groups": [],
-      "user_permissions": []
-    }
-  },
-  {
     "model": "library_server.book",
     "pk": 1,
     "fields": {
@@ -135,7 +81,8 @@
       "publisher": "Arthur A. Levine Books",
       "isbn": "978-1338109061",
       "img": "https://images-na.ssl-images-amazon.com/images/I/61kS08bR-EL._SX311_BO1 204 203 200_.jpg",
-      "available_copies": 11
+      "available_copies": 10,
+      "requestFreq": 0
     }
   },
   {
@@ -148,7 +95,8 @@
       "publisher": "Harry N. Abrams",
       "isbn": "978-1419723445",
       "img": "https://images-na.ssl-images-amazon.com/images/I/518byyOLMcL._SX344_BO1 204 203 200_.jpg",
-      "available_copies": 10
+      "available_copies": 10,
+      "requestFreq": 0
     }
   },
   {
@@ -161,7 +109,8 @@
       "publisher": "Thomas Nelson",
       "isbn": "978-0718079185",
       "img": "https://images-na.ssl-images-amazon.com/images/I/51WIWazu2rL._SX331_BO1 204 203 200_.jpg",
-      "available_copies": 0
+      "available_copies": 10,
+      "requestFreq": 0
     }
   },
   {
@@ -174,7 +123,8 @@
       "publisher": "Henry Holt and Co",
       "isbn": "978-1627790628",
       "img": "https://images-na.ssl-images-amazon.com/images/I/51x-38avp4L._SX328_BO1 204 203 200_.jpg",
-      "available_copies": 10
+      "available_copies": 10,
+      "requestFreq": 0
     }
   },
   {
@@ -187,7 +137,8 @@
       "publisher": "Aladdin",
       "isbn": "978-1481466226",
       "img": "https://images-na.ssl-images-amazon.com/images/I/515MrbUcuwL._SX409_BO1 204 203 200_.jpg",
-      "available_copies": 10
+      "available_copies": 10,
+      "requestFreq": 0
     }
   },
   {
@@ -200,7 +151,8 @@
       "publisher": "Grand Central Publishing",
       "isbn": "978-1455539741",
       "img": "https://images-na.ssl-images-amazon.com/images/I/51PK6V0aiOL._SX396_BO1 204 203 200_.jpg",
-      "available_copies": 10
+      "available_copies": 10,
+      "requestFreq": 0
     }
   },
   {
@@ -213,7 +165,8 @@
       "publisher": "Thomas Dunne Books",
       "isbn": "978-1250132925",
       "img": "https://images-na.ssl-images-amazon.com/images/I/51gRt0H1MXL._SX328_BO1 204 203 200_.jpg",
-      "available_copies": 9
+      "available_copies": 10,
+      "requestFreq": 0
     }
   },
   {
@@ -226,7 +179,26 @@
       "publisher": "Doubleday",
       "isbn": "978-0385541190",
       "img": "https://images-na.ssl-images-amazon.com/images/I/51NEkcjDPuL._SX327_BO1 204 203 200_.jpg",
-      "available_copies": 10
+      "available_copies": 10,
+      "requestFreq": 0
+    }
+  },
+  {
+    "model": "library_server.borrowedbook",
+    "pk": 3,
+    "fields": {
+      "user": 2,
+      "book": 1,
+      "pub_date": "2016-12-05"
+    }
+  },
+  {
+    "model": "library_server.borrowedbook",
+    "pk": 4,
+    "fields": {
+      "user": 2,
+      "book": 2,
+      "pub_date": "2016-12-05"
     }
   },
   {
@@ -235,34 +207,16 @@
     "fields": {
       "user": 2,
       "book": 8,
-      "borrow_date": "2016-12-05"
+      "pub_date": "2016-12-05"
     }
   },
   {
     "model": "library_server.borrowedbook",
-    "pk": 7,
+    "pk": 6,
     "fields": {
-      "user": 2,
-      "book": 2,
-      "borrow_date": "2016-12-17"
-    }
-  },
-  {
-    "model": "library_server.borrowedbook",
-    "pk": 9,
-    "fields": {
-      "user": 2,
-      "book": 7,
-      "borrow_date": "2016-12-17"
-    }
-  },
-  {
-    "model": "library_server.borrowedbook",
-    "pk": 26,
-    "fields": {
-      "user": 8,
-      "book": 3,
-      "borrow_date": "2016-12-17"
+      "user": 3,
+      "book": 5,
+      "pub_date": "2016-12-05"
     }
   }
 ]
