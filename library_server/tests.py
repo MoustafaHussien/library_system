@@ -90,3 +90,75 @@ class LibrarySystemTest(TestCase):
         response = c.get('/books/2/')
         self.assertContains(response, "Title : Diary of a Wimpy Kid # 11: Double Down", 1, 200)
         self.assertContains(response, "ISBN : 978-1419723445", 1, 200)
+
+    def test_user_borrow_for_authenticated_user_no_avail_copies(self):
+        c = Client()
+        c.post('/accounts/login/', {'username': 'Ali', 'password': 'password2'})
+        response = c.get('/borrow/3/')
+        self.assertContains(response, "Sorry there is no available copies at the moment", 1, 200)
+        self.assertContains(response, "Your request has been saved and will be updated automatically", 1, 200)
+
+    def test_user_return_book_for_authenticated_user(self):
+        c = Client()
+        c.post('/accounts/login/', {'username': 'Ali', 'password': 'password2'})
+        response = c.get('/borrow/1/')
+        self.assertContains(response, "book borrowing successful", 1, 200)
+        response = c.get('/return/1/')
+        self.assertContains(response, "book return successful", 1, 200)
+
+    def test_user_return_unborrowed_book_for_authenticated_user(self):
+        c = Client()
+        c.post('/accounts/login/', {'username': 'Ali', 'password': 'password2'})
+        response = c.get('/return/1/')
+        self.assertContains(response, "Ali didn't borrow that book", 1, 200)
+
+    def test_user_return_book_not_existing(self):
+        c = Client()
+        c.post('/accounts/login/', {'username': 'Ali', 'password': 'password2'})
+        response = c.get('/return/10/')
+        self.assertEqual(response.status_code, 404)
+
+    def test_user_return_book_for_unauthenticated_user(self):
+        c = Client()
+        response = c.get('/borrow/1/')
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, '/accounts/login/?next=/borrow/1/')
+        response = c.get('/return/1/')
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, '/accounts/login/?next=/return/1/')
+
+    def test_user_search_for_book1(self):
+        c = Client()
+        c.post('/accounts/login/', {'username': 'Ali', 'password': 'password2'})
+        response = c.get('/search/', {'search_box': 'Whistler'})
+        self.assertContains(response, "The Whistler", 1, 200)
+
+    def test_user_search_for_book2(self):
+        c = Client()
+        c.post('/accounts/login/', {'username': 'Ali', 'password': 'password2'})
+        response = c.get('/search/', {'search_box': '978-1481466226'})
+        self.assertContains(response, "Take Heart  My Child: A Mother&#39;s Dream", 1, 200)
+
+    def test_user_search_for_book3(self):
+        c = Client()
+        c.post('/accounts/login/', {'username': 'Ali', 'password': 'password2'})
+        response = c.get('/search/', {'search_box': 'Bill'})
+        self.assertContains(response, "Killing the Rising Sun: How America Vanquished World War II Japan", 1, 200)
+
+    def test_user_search_for_book4(self):
+        c = Client()
+        c.post('/accounts/login/', {'username': 'Ali', 'password': 'password2'})
+        response = c.get('/search/', {'search_box': 'Revolution'})
+        self.assertContains(response, "Hamilton: The Revolution", 1, 200)
+        self.assertContains(response, "Our Revolution: A Future to Believe In", 1, 200)
+
+    def test_user_search_for_book5(self):
+        c = Client()
+        c.post('/accounts/login/', {'username': 'Ali', 'password': 'password2'})
+        response = c.get('/search/', {'search_box': 'the'})
+        self.assertContains(response, "Fantastic Beasts and Where to Find Them: The Original Screenplay", 1, 200)
+        self.assertContains(response, "The Magnolia Story", 1, 200)
+        self.assertContains(response, "Killing the Rising Sun: How America Vanquished World War II Japan", 1, 200)
+        self.assertContains(response, "Take Heart  My Child: A Mother&#39;s Dream", 1, 200)
+        self.assertContains(response, "Hamilton: The Revolution", 1, 200)
+        self.assertContains(response, "The Whistler", 1, 200)

@@ -80,18 +80,18 @@ def handle_new_copies_availability(book_to_return):
 
 @login_required()
 def return_(request, book_id):
-    # try:
-    already_borrowed = BorrowedBook.objects.filter(user=request.user.id).filter(book=book_id).exists()
-    book_to_return = Book.objects.filter(id=book_id)[0]
-    if already_borrowed:  # delete the BorrowedBook
-        BorrowedBook.objects.filter(user=request.user, book=book_to_return).delete()
-        Book.objects.filter(id=book_id).update(available_copies=book_to_return.available_copies + 1)
-        handle_new_copies_availability(book_to_return)
-    context = {'already_borrowed': already_borrowed, }
-    template = loader.get_template('library_server/return_page.html')
-    return HttpResponse(template.render(context, request))
-    # except:
-    #     raise Http404
+    try:
+        already_borrowed = BorrowedBook.objects.filter(user=request.user.id).filter(book=book_id).exists()
+        book_to_return = Book.objects.filter(id=book_id)[0]
+        if already_borrowed:  # delete the BorrowedBook
+            BorrowedBook.objects.filter(user=request.user, book=book_to_return).delete()
+            Book.objects.filter(id=book_id).update(available_copies=book_to_return.available_copies + 1)
+            handle_new_copies_availability(book_to_return)
+        context = {'already_borrowed': already_borrowed, }
+        template = loader.get_template('library_server/return_page.html')
+        return HttpResponse(template.render(context, request))
+    except:
+        raise Http404
 
 
 @login_required
